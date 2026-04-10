@@ -1,0 +1,184 @@
+/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/pydantic/_internal/_generate_schema.py:937: UserWarning: Mixing V1 models and V2 models (or constructs, like `TypeAdapter`) is not supported. Please upgrade `CrewAgentExecutor` to V2.
+  warnings.warn(
+2026-04-10 20:42:43,895 | INFO | Starting stage_0
+2026-04-10 20:42:44,445 | INFO | HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-10 20:42:44,448 | ERROR | Attempt 1 failed for stage_0: Error code: 400 - {'error': {'message': 'Model Not Exist', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}
+Traceback (most recent call last):
+  File "/Users/jessicatamin/Desktop/HKU/IIMT3688/Assignment 4*/pipeline.py", line 115, in run_pipeline
+    result = crew.kickoff()
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/crewai/crew.py", line 127, in kickoff
+    return self._sequential_loop()
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/crewai/crew.py", line 134, in _sequential_loop
+    task_output = task.execute(task_output)
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/crewai/task.py", line 56, in execute
+    result = self.agent.execute_task(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/crewai/agent.py", line 146, in execute_task
+    result = self.agent_executor.invoke(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain/chains/base.py", line 162, in invoke
+    raise e
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain/chains/base.py", line 156, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/crewai/agents/executor.py", line 59, in _call
+    next_step_output = self._take_next_step(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1055, in _take_next_step
+    [
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1055, in <listcomp>
+    [
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/crewai/agents/executor.py", line 103, in _iter_next_step
+    output = self.agent.plan(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 386, in plan
+    output = self.runnable.invoke(inputs, config={"callbacks": callbacks})
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 2053, in invoke
+    input = step.invoke(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 4064, in invoke
+    return self.bound.invoke(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 166, in invoke
+    self.generate_prompt(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 544, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 408, in generate
+    raise e
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in generate
+    self._generate_with_cache(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 577, in _generate_with_cache
+    return self._generate(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_openai/chat_models/base.py", line 437, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'Model Not Exist', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}
+2026-04-10 20:42:46,663 | INFO | HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-10 20:42:46,664 | ERROR | Attempt 2 failed for stage_0: Error code: 400 - {'error': {'message': 'Model Not Exist', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}
+Traceback (most recent call last):
+  File "/Users/jessicatamin/Desktop/HKU/IIMT3688/Assignment 4*/pipeline.py", line 115, in run_pipeline
+    result = crew.kickoff()
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/crewai/crew.py", line 127, in kickoff
+    return self._sequential_loop()
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/crewai/crew.py", line 134, in _sequential_loop
+    task_output = task.execute(task_output)
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/crewai/task.py", line 56, in execute
+    result = self.agent.execute_task(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/crewai/agent.py", line 146, in execute_task
+    result = self.agent_executor.invoke(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain/chains/base.py", line 162, in invoke
+    raise e
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain/chains/base.py", line 156, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/crewai/agents/executor.py", line 59, in _call
+    next_step_output = self._take_next_step(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1055, in _take_next_step
+    [
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1055, in <listcomp>
+    [
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/crewai/agents/executor.py", line 103, in _iter_next_step
+    output = self.agent.plan(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 386, in plan
+    output = self.runnable.invoke(inputs, config={"callbacks": callbacks})
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 2053, in invoke
+    input = step.invoke(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 4064, in invoke
+    return self.bound.invoke(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 166, in invoke
+    self.generate_prompt(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 544, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 408, in generate
+    raise e
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in generate
+    self._generate_with_cache(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 577, in _generate_with_cache
+    return self._generate(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_openai/chat_models/base.py", line 437, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'Model Not Exist', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}
+2026-04-10 20:42:50,842 | INFO | HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-10 20:42:50,844 | ERROR | Attempt 3 failed for stage_0: Error code: 400 - {'error': {'message': 'Model Not Exist', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}
+Traceback (most recent call last):
+  File "/Users/jessicatamin/Desktop/HKU/IIMT3688/Assignment 4*/pipeline.py", line 115, in run_pipeline
+    result = crew.kickoff()
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/crewai/crew.py", line 127, in kickoff
+    return self._sequential_loop()
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/crewai/crew.py", line 134, in _sequential_loop
+    task_output = task.execute(task_output)
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/crewai/task.py", line 56, in execute
+    result = self.agent.execute_task(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/crewai/agent.py", line 146, in execute_task
+    result = self.agent_executor.invoke(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain/chains/base.py", line 162, in invoke
+    raise e
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain/chains/base.py", line 156, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/crewai/agents/executor.py", line 59, in _call
+    next_step_output = self._take_next_step(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1055, in _take_next_step
+    [
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 1055, in <listcomp>
+    [
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/crewai/agents/executor.py", line 103, in _iter_next_step
+    output = self.agent.plan(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain/agents/agent.py", line 386, in plan
+    output = self.runnable.invoke(inputs, config={"callbacks": callbacks})
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 2053, in invoke
+    input = step.invoke(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/runnables/base.py", line 4064, in invoke
+    return self.bound.invoke(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 166, in invoke
+    self.generate_prompt(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 544, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 408, in generate
+    raise e
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in generate
+    self._generate_with_cache(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 577, in _generate_with_cache
+    return self._generate(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/langchain_openai/chat_models/base.py", line 437, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/jessicatamin/Library/Python/3.9/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'Model Not Exist', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}
+2026-04-10 20:42:50,846 | ERROR | Failed stage_0 after 3 attempts.
+2026-04-10 20:42:50,846 | INFO | Pipeline finished. Final state: {}
+
+[DEBUG]: Working Agent: Researcher
+
+[INFO]: Starting Task: Research the topic: benefits of renewable energy. Return concise bullet-point findings with the most important facts.
+
+
+[1m> Entering new CrewAgentExecutor chain...[0m
+
+[DEBUG]: Working Agent: Researcher
+
+[INFO]: Starting Task: Research the topic: benefits of renewable energy. Return concise bullet-point findings with the most important facts.
+
+
+[1m> Entering new CrewAgentExecutor chain...[0m
+
+[DEBUG]: Working Agent: Researcher
+
+[INFO]: Starting Task: Research the topic: benefits of renewable energy. Return concise bullet-point findings with the most important facts.
+
+
+[1m> Entering new CrewAgentExecutor chain...[0m
